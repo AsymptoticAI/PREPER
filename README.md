@@ -1,3 +1,5 @@
+![PREPER dataset](eyecatcher.png)
+
 # PREPER - A Dataset for Safety Evaluation of AI Perception Systems
 
 ## Introduction
