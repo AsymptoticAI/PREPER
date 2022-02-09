@@ -2,6 +2,17 @@
 
 # PREPER - A Dataset for Safety Evaluation of AI Perception Systems
 
+## Contents
+
+- [Introduction](https://github.com/AsymptoticAI/PREPER#introduction)
+- [Test setup](https://github.com/AsymptoticAI/PREPER#test-setup)
+- [Directory layout, sensors, data formats](https://github.com/AsymptoticAI/PREPER#directory-layout-sensors-data-formats)
+- [Coordinate systems and calibration](https://github.com/AsymptoticAI/PREPER#coordinate-systems-and-calibration)
+- [KPIs](https://github.com/AsymptoticAI/PREPER#kpis)
+- [Evaluation](https://github.com/AsymptoticAI/PREPER#evaluation)
+- [Download, License, Citation](https://github.com/AsymptoticAI/PREPER#download-license-citation)
+- [Questions, feedback, benchmark results](https://github.com/AsymptoticAI/PREPER#questions-feedback-benchmark-results)
+
 ## Introduction
 
 Deep learning algorithms are becoming the state-of-the-art technology used in
