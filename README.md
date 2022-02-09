@@ -262,12 +262,13 @@ sequence. In any case, please get in touch before submitting your results.
 ## Download, License, Citation
 
 The PREPER dataset can be downloaded from
-<https://github.com/AsymptoticAI/PREPER>. The main dataset is made available as
-one archive named "preper.zip" containing the camera data and target poses. The
-optional lidar data is stored in a separate file named "preper\_lidar.zip".
-Both can be unpacked to the same directory to obtain the full dataset. This
-readme, the license file and the python script to calculate the KPIs can be
-downloaded in separate files from the same link.
+<https://drive.google.com/drive/folders/1IFxqBPkGjkMsQFRPUoub_90s3GM1dY2p?usp=sharing>.
+The main dataset is made available as one archive named "preper.zip" containing
+the camera data and target poses. The optional lidar data is stored in a
+separate file named "preper\_lidar.zip". Both can be unpacked to the same
+directory to obtain the full dataset. This readme, the license file and the
+python script to calculate the KPIs can be downloaded in separate files from
+the same link or from this repository.
 
 All PREPER data is made available under the Open Data Commons Attribution
 License ODC-By: http://opendatacommons.org/licenses/by/1.0/ and can be freely
