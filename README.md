@@ -138,8 +138,10 @@ the center of gravity of the target car and the same axis orientations
 as the ego car but relative to its own driving direction. The xy-plane
 of both cars is approx. 0.40m above the ground.
 
-Extrinsic camera calibration parameters for both the front and right camera
-are:
+Projecting points in the reference coordinate system to the front or right
+camera can be accomplished with the following transformations using the OpenCV
+camera coordinate system. An example for drawing a bounding box around the
+target car is provided in the script "projection.py".
 
 Translation vectors t = [x, y, z] in meter:
 
