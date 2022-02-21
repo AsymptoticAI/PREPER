@@ -117,6 +117,8 @@ def project(scenario, sequence, frame, cam="front", out_dir="/tmp"):
     points = np.matmul(rotation, np.array(points).T).T + translation
     projected_points = project_points(cam, scenario, rotation, translation, points)
     img_name = "%010d.%s" % (timestamp, "png")
+    if cam == "right":
+        img_name = "%010d_right.%s" % (timestamp, "png")
     img = cv2.imread(os.path.join(os.path.join(scenario, "%02d" % sequence), img_name))
     img = draw_bbox(img, projected_points)
     cv2.imwrite(os.path.join(out_dir, img_name), img)
@@ -124,3 +126,4 @@ def project(scenario, sequence, frame, cam="front", out_dir="/tmp"):
 
 if __name__ == "__main__":
     project("straight", 1, 120)
+    project("cross1", 1, 170, cam="right")
