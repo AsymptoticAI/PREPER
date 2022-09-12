@@ -9,6 +9,7 @@
 - [Directory layout, sensors, data formats](https://github.com/AsymptoticAI/PREPER#directory-layout-sensors-data-formats)
 - [Coordinate systems and calibration](https://github.com/AsymptoticAI/PREPER#coordinate-systems-and-calibration)
 - [KPIs](https://github.com/AsymptoticAI/PREPER#kpis)
+- [Videos](https://github.com/AsymptoticAI/PREPER#videos)
 - [Evaluation](https://github.com/AsymptoticAI/PREPER#evaluation)
 - [Download, License, Citation](https://github.com/AsymptoticAI/PREPER#download-license-citation)
 - [Questions, feedback, benchmark results](https://github.com/AsymptoticAI/PREPER#questions-feedback-benchmark-results)
@@ -86,11 +87,6 @@ This is an overview of the scenarios and the number of sequences in each scenari
 |           |              |           |
 | total     |              | 160       |
 
-## Videos
-
-
-[<img src="https://drive.google.com/file/d/1a0Xbwqt2Ntu92OpGpIjVD0wEeUx8d4d8/view?usp=sharing" width="50%">](https://drive.google.com/file/d/1nQcYjXa08bq7lBuR7TcD94Tfd5-WBpbh/view?usp=sharing)
-
 ## Directory layout, sensors, data formats
 
 Each scenario is stored in a separate folder which contains a subfolder for
@@ -105,14 +101,14 @@ the timestamp of this frame.
 Vehicle position and orientation is captured by OxTS GPS/IMU units in both ego
 and target car and an additional Applanix GPS/IMU in the ego car. The
 calibrated and processed data from these units is stored in the file
-"targetpose.csv" in each sequence folder and contains time, position (x, y, z
+`targetpose.csv` in each sequence folder and contains time, position (x, y, z
 coordinates) and orientation (yaw, pitch, role) of the target vehicle.
 
 ### Cameras
 
 There were two lossless Basler cameras mounted in the front of the ego vehicle,
 one facing forward and one in a 45 degree angle to the right. The latter camera
-data is provided only in the "cross" scenarios with the file suffix "\_right".
+data is provided only in the "cross" scenarios with the file suffix `\_right`.
 The frame rate of both cameras was 34 frames per second (warped speed). All
 camera images are stored in lossless png format.
 
@@ -120,7 +116,7 @@ camera images are stored in lossless png format.
 
 The lidar mounted on top of the ego car is a Velodyne HDL-32 rotating at 20Hz
 (warped speed). The measurements are stored in binary files with the extension
-".bin" in each sequence folder. Each point measurement consists of four 64-bit
+`.bin` in each sequence folder. Each point measurement consists of four 64-bit
 floating point numbers x, y, z and intensity in little-endian byte order. The
 whole n x 4 point matrix is sequenced in C-order. The data can be read e.g. in
 python using numpy.fromfile() on an x86\_64 machine and reshaped to a n x 4
@@ -146,7 +142,7 @@ of both cars is approx. 0.40m above the ground.
 Projecting points in the reference coordinate system to the front or right
 camera can be accomplished with the following transformations using the OpenCV
 camera coordinate system. An example for drawing a bounding box around the
-target car is provided in the script "projection.py".
+target car is provided in the script `projection.py`.
 
 Translation vectors t = [x, y, z] in meter:
 
@@ -196,9 +192,18 @@ participants. For our purpose of benchmarking machine learning perception
 systems with the given test scenarios we have defined two simple KPIs which are
 explained in more detail in the following subsections. Python code for
 calculating these KPIs from the test data is provided in a separate file
-"kpis.py". In practice, when implementing a collision warning system in a car
+`kpis.py`. In practice, when implementing a collision warning system in a car
 it is advisable to calculate several different warnings at once and decide upon
 a final collision assessment based on the current driving situation.
+
+## Videos
+
+This section contains links to some videos of scenarios and KPI annotations of the
+PREPER data. The video quality has been reduced compared to the original camera data
+in order to speed up viewing the files.
+
+[<img src="https://drive.google.com/file/d/1a0Xbwqt2Ntu92OpGpIjVD0wEeUx8d4d8/view?usp=sharing" width="100%">](https://drive.google.com/file/d/1nQcYjXa08bq7lBuR7TcD94Tfd5-WBpbh/view?usp=sharing)
+
 
 ### Collision warning "lateral offset"
 
@@ -233,7 +238,7 @@ works in the same way for both "lateral offset" and "delta bearing" and only
 depends on the distance of the target vehicle to the ego vehicle. Predefined
 distance ranges are mapped to eight warning levels from 0 (no warning) to 7
 (maximum warning level). For implementation details please have a look at the
-the function "warning\_level()" in "kpis.py".
+the function "warning\_level()" in `kpis.py`.
 
 ## Evaluation
 
@@ -283,9 +288,9 @@ sequence. In any case, please get in touch before submitting your results.
 
 The PREPER dataset can be downloaded from
 <https://drive.google.com/drive/folders/1IFxqBPkGjkMsQFRPUoub_90s3GM1dY2p?usp=sharing>.
-The main dataset is made available as one archive named "preper.zip" containing
+The main dataset is made available as one archive named `preper.zip` containing
 the camera data and target poses. The optional lidar data is stored in a
-separate file named "preper\_lidar.zip". Both can be unpacked to the same
+separate file named `preper\_lidar.zip`. Both can be unpacked to the same
 directory to obtain the full dataset. This readme, the license file and the
 python script to calculate the KPIs can be downloaded in separate files from
 the same link or from this repository.
