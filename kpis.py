@@ -100,3 +100,11 @@ def collwarn(scenario, sequence):
         thresh = thresh_bearing + bearing_tolerance
         ret = warning_level(scenario, distance, delta_bearing, thresh)
     return ret
+
+if __name__ == __main__:
+	# Examples for calcualting the collision warnings in a scenario
+	# Scenario "straight", sequence 1 is a reference scenario with no collision
+	collwarn("straight", 1)
+	# Scenario "straight", seuqnces 8 and 21 generate collision warnings (like most other sequences)
+	collwarn("straight", 8)
+	collwarn("straight", 21)
