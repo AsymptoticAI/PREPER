@@ -108,7 +108,7 @@ coordinates) and orientation (yaw, pitch, role) of the target vehicle.
 
 There were two lossless Basler cameras mounted in the front of the ego vehicle,
 one facing forward and one in a 45 degree angle to the right. The latter camera
-data is provided only in the "cross" scenarios with the file suffix `\_right`.
+data is provided only in the "cross" scenarios with the file suffix `_right`.
 The frame rate of both cameras was 34 frames per second (warped speed). All
 camera images are stored in lossless png format.
 
@@ -229,7 +229,7 @@ works in the same way for both "lateral offset" and "delta bearing" and only
 depends on the distance of the target vehicle to the ego vehicle. Predefined
 distance ranges are mapped to eight warning levels from 0 (no warning) to 7
 (maximum warning level). For implementation details please have a look at the
-the function "warning\_level()" in `kpis.py`.
+function `warning_level()` in `kpis.py`.
 
 ## Evaluation
 
@@ -281,7 +281,7 @@ The PREPER dataset can be downloaded from
 <https://drive.google.com/drive/folders/1IFxqBPkGjkMsQFRPUoub_90s3GM1dY2p?usp=sharing>.
 The main dataset is made available as one archive named `preper.zip` containing
 the camera data and target poses. The optional lidar data is stored in a
-separate file named `preper\_lidar.zip`. Both can be unpacked to the same
+separate file named `preper_lidar.zip`. Both can be unpacked to the same
 directory to obtain the full dataset. This readme, the license file and the
 python script to calculate the KPIs can be downloaded in separate files from
 the same link or from this repository.
