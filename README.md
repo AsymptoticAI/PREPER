@@ -12,7 +12,7 @@
 - [Evaluation](https://github.com/AsymptoticAI/PREPER#evaluation)
 - [Download, License, Citation](https://github.com/AsymptoticAI/PREPER#download-license-citation)
 - [Questions, feedback, benchmark results](https://github.com/AsymptoticAI/PREPER#questions-feedback-benchmark-results)
-- [Videos](https://github.com/AsymptoticAI/PREPER#videos)
+- [Sample Videos](https://github.com/AsymptoticAI/PREPER#sample-videos)
 
 ## Introduction
 
@@ -303,7 +303,7 @@ made, and give credit using the following citation:
 For feedback, questions or if you like to provide benchmark results please
 contact <jorg.bakker@asymptotic.ai>.
 
-## Videos
+## Sample Videos
 
 This section contains links to some videos of scenarios and KPI annotations of the
 PREPER data. The video quality has been reduced compared to the original camera data
