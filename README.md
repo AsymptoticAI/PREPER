@@ -9,10 +9,10 @@
 - [Directory layout, sensors, data formats](https://github.com/AsymptoticAI/PREPER#directory-layout-sensors-data-formats)
 - [Coordinate systems and calibration](https://github.com/AsymptoticAI/PREPER#coordinate-systems-and-calibration)
 - [KPIs](https://github.com/AsymptoticAI/PREPER#kpis)
-- [Videos](https://github.com/AsymptoticAI/PREPER#videos)
 - [Evaluation](https://github.com/AsymptoticAI/PREPER#evaluation)
 - [Download, License, Citation](https://github.com/AsymptoticAI/PREPER#download-license-citation)
 - [Questions, feedback, benchmark results](https://github.com/AsymptoticAI/PREPER#questions-feedback-benchmark-results)
+- [Videos](https://github.com/AsymptoticAI/PREPER#videos)
 
 ## Introduction
 
@@ -196,17 +196,6 @@ calculating these KPIs from the test data is provided in a separate file
 it is advisable to calculate several different warnings at once and decide upon
 a final collision assessment based on the current driving situation.
 
-## Videos
-
-This section contains links to some videos of scenarios and KPI annotations of the
-PREPER data. The video quality has been reduced compared to the original camera data
-in order to speed up viewing the files.
-
-<!-- [<img src="https://drive.google.com/file/d/1a0Xbwqt2Ntu92OpGpIjVD0wEeUx8d4d8/view?usp=sharing" width="100%">](https://drive.google.com/file/d/1L9ZwViFOHol4l0Ik_tIHB_suLdAC1-er/view?usp=sharing) -->
-<!-- [!(https://drive.google.com/file/d/1a0Xbwqt2Ntu92OpGpIjVD0wEeUx8d4d8/view?usp=sharing)](https://drive.google.com/file/d/1L9ZwViFOHol4l0Ik_tIHB_suLdAC1-er/view?usp=sharing) -->
-[![straight road](02.jpg)](https://drive.google.com/file/d/1L9ZwViFOHol4l0Ik_tIHB_suLdAC1-er/view?usp=sharing)
-
-
 ### Collision warning "lateral offset"
 
 The lateral offset to the target car is defined as the x-component of the
@@ -313,3 +302,33 @@ made, and give credit using the following citation:
 
 For feedback, questions or if you like to provide benchmark results please
 contact <jorg.bakker@asymptotic.ai>.
+
+## Videos
+
+This section contains links to some videos of scenarios and KPI annotations of the
+PREPER data. The video quality has been reduced compared to the original camera data
+in order to speed up viewing the files. Click on the preview image to watch the video.
+
+[![Rural straight road simulation](01.jpg)](https://drive.google.com/file/d/1kY4sOH0tRx5VtWYUdxlV7uQNgGCRfMsn/view?usp=sharing)
+*Rural straight road simulation*
+
+[![Rural straight road test track](02.jpg)](https://drive.google.com/file/d/1L9ZwViFOHol4l0Ik_tIHB_suLdAC1-er/view?usp=sharing)
+*Rural straight road test track*
+
+[![City crossing simulation](03.jpg)](https://drive.google.com/file/d/18Q-90u70h58PNCgf6Yy0mgbi3gyujB0a/view?usp=sharing)
+*City crossing simulation*
+
+[![City crossing test track](04.jpg)](https://drive.google.com/file/d/1si5Th1njBAsXa8R8yy620ZknmurxdEMK/view?usp=sharing)
+*City crossing test track*
+
+[![Rural straight annotated](05.jpg)](https://drive.google.com/file/d/1o2qYXfewxLiddur8QgO9AAizXUwtaz1E/view?usp=sharing)
+*Rural straight annotated*
+
+[![Rural straight leader car annotated](06.jpg)](https://drive.google.com/file/d/1NnE5ZGfekwqu0ErhCk1d8nIPYlUp7JVm/view?usp=sharing)
+*Rural straight leader car annotated*
+
+[![Rural curve left annotated](07.jpg)](https://drive.google.com/file/d/1UXy7C_4e1UG_T2mlQGnoaK4pwJktLJwJ/view?usp=sharing)
+*Rural curve left annotated*
+
+[![City crossing annotated](08.jpg)](https://drive.google.com/file/d/1EX2g524kVbKqxuhYFaxNGe7AZ4uMBIeS/view?usp=sharing)
+*City crossing annotated*
