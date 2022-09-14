@@ -312,7 +312,7 @@ in order to speed up viewing the files. Click on the preview image to watch the 
 [![Rural straight road simulation](01.jpg)](https://drive.google.com/file/d/1kY4sOH0tRx5VtWYUdxlV7uQNgGCRfMsn/view?usp=sharing)
 *Rural straight road simulation*
 
-[![Rural straight road test track](02.jpg)](https://drive.google.com/file/d/1L9ZwViFOHol4l0Ik_tIHB_suLdAC1-er/view?usp=sharing)
+[![Rural straight road test track](02.jpg)](https://drive.google.com/file/d/1m0-wExagXyjlWPWhatJzm4U0EOD3NwYN/view?usp=sharing)
 *Rural straight road test track*
 
 [![City crossing simulation](03.jpg)](https://drive.google.com/file/d/18Q-90u70h58PNCgf6Yy0mgbi3gyujB0a/view?usp=sharing)
