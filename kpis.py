@@ -109,7 +109,7 @@ def collwarn(scenario, sequence):
     ttc[distance >= no_warn_dist[scenario]] = infinity
     # Baseline vectors
     W = collwarn
-    C = 1 / ttc
+    C = np.nan_to_num(1 / ttc)
     return collwarn
 
 if __name__ == "__main__":
