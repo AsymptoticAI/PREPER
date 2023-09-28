@@ -189,16 +189,16 @@ target car able to keep its lane”. Often, the driver’s experience also takes
 predicted behavior of the driver of the target car into account based on the
 context of the current situation, possibly involving other traffic
 participants. For our purpose of benchmarking machine learning perception
-systems with the given test scenarios we have defined two simple KPIs which are
+systems with the given test scenarios we have defined a set of KPIs which are
 explained in more detail in the following subsections. Python code for
 calculating these KPIs from the test data is provided in a separate file
 `kpis.py`. In practice, when implementing a collision warning system in a car
 it is advisable to calculate several different warnings at once and decide upon
 a final collision assessment based on the current driving situation.
 
-### Collision warning "lateral offset"
+### Collision warning based on lateral distance
 
-The lateral offset to the target car is defined as the x-component of the
+The lateral distance to the target car is defined as the x-component of the
 position of the target car in the ego car's (reference) coordinate system. When
 it drops below a predefined threshold, the collision warning is activated. As
 this warning can be calculated from the position of the target car at each
@@ -208,7 +208,7 @@ scenarios where the target car has a higher lateral movement component than in
 the other scenarios. This is due to the driver needing to avoid a real
 collision in the test setup.
 
-### Collision warning "delta bearing"
+### Collision warning based on delta bearing
 
 The delta bearing is defined as the change of the bearing to the target vehicle
 within a predefined time interval. As we need a sliding window for tracking
@@ -223,13 +223,14 @@ section) is still low in these cases.
 
 ### Warning level
 
-In addition to identifying a collision threat the risk level of the threat
-needs to be assessed to be able to respond with appropriate measures. This
-works in the same way for both "lateral offset" and "delta bearing" and only
-depends on the distance of the target vehicle to the ego vehicle. Predefined
-distance ranges are mapped to eight warning levels from 0 (no warning) to 7
-(maximum warning level). For implementation details please have a look at the
-function `warning_level()` in `kpis.py`.
+In addition to identifying a collision threat the risk level of the
+threat needs to be assessed to be able to respond with appropriate
+measures. This works in the same way for warnings based on both "lateral
+distance" and "delta bearing" and only depends on the distance of
+the target vehicle to the ego vehicle. Predefined distance ranges are
+mapped to eight warning levels from 0 (no warning) to 7 (maximum warning
+level). For implementation details please have a look at the function
+`warning_level()` in `kpis.py`.
 
 ## Evaluation
 
@@ -261,19 +262,20 @@ Some AI perception systems might not provide the full target pose but generate
 2D bounding boxes around the objects in the camera image along with a distance
 to the object. Then it still might be possible to calculate the KPIs if the
 necessary input parameters for the collision warning functions are supplied.
-These are: distance, bearing, lateral offset to the object and projected object
-width.
+These are: distance, bearing, lateral distance to the object and projected
+object width.
 
 By the time the PREPER data is released a formal procedure to evaluate and
 compare different results in a benchmark has not been established, yet.
-However, feedback in the form of evaluation results obtained with your AI
-perception algorithms are more than welcome. After obtaining a number of
-different evaluation results, it should also be possible to provide a
-comparison and benchmarking procedure and then this document will be updated
-accordingly. When submitting your data, please provide the predicted target
-poses or alternatively the collision warning function input parameters
-(distance, bearing, lateral offset and projected object width) for each PREPER
-sequence. In any case, please get in touch before submitting your results.
+However, feedback in the form of evaluation results obtained with your
+AI perception algorithms are more than welcome. After obtaining a number
+of different evaluation results, it should also be possible to provide
+a comparison and benchmarking procedure and then this document will
+be updated accordingly. When submitting your data, please provide the
+predicted target poses or alternatively the collision warning function
+input parameters (distance, bearing, lateral distance and projected object
+width) for each PREPER sequence. In any case, please get in touch before
+submitting your results.
 
 ## Download, License, Citation
 
