@@ -84,27 +84,38 @@ def collwarn(scenario, sequence):
     target_pose_file = os.path.join(scenario, "%02d" % sequence, "targetpose.csv")
     target_pose      = np.genfromtxt(target_pose_file, delimiter=",", skip_header=1)
     distance         = np.sqrt(np.square(target_pose[:,1]) + np.square(target_pose[:,2]))
-    lateral_offset   = np.abs(target_pose[:,1])
+    lateral_distance = np.abs(target_pose[:,1])
     bearing          = np.arcsin(target_pose[:,1] / distance)
     object_width     = projected_width(target_pose[:,4], target_width, target_length)
     stride_length    = 5
+    delta_dist       = diff(distance, stride_length)
+    delta_t          = 1.0e-9 * diff(target_pose[:,0], stride_length)
+    rel_speed        = delta_dist / delta_t
     delta_bearing    = np.abs(diff(bearing, stride_length))
     margin           = 0.0
     if scenario == "curve_right":
         margin = lateral_safety_margin
     thresh_bearing = diff(np.arctan2(object_width + margin, distance), stride_length)
     if scenario == "turn":
-        thresh = np.ones(len(distance)) * lateral_collision_offset
-        ret = warning_level(scenario, distance, lateral_offset, thresh)
+	    thresh = np.ones(len(distance)) * lateral_collision_offset
+	    val = lateral_distance
     else:
-        thresh = thresh_bearing + bearing_tolerance
-        ret = warning_level(scenario, distance, delta_bearing, thresh)
-    return ret
+	    thresh = thresh_bearing + bearing_tolerance
+	    val = delta_bearing
+    collwarn = warning_level(scenario, distance, val, thresh)
+    infinity = np.nan
+    ttc = -1 * distance / rel_speed
+    ttc[val > thresh] = infinity
+    ttc[distance >= no_warn_dist[scenario]] = infinity
+    # Baseline vectors
+    W = collwarn
+    C = 1 / ttc
+    return collwarn
 
 if __name__ == "__main__":
-	# Examples for calcualting the collision warnings in a scenario
-	# Scenario "straight", sequence 1 is a reference scenario with no collision
-	collwarn("straight", 1)
-	# Scenario "straight", sequences 8 and 21 generate collision warnings (like most other sequences)
-	collwarn("straight", 8)
-	collwarn("straight", 21)
+    # Examples for calcualting the collision warnings in a scenario
+    # Scenario "straight", sequence 1 is a reference scenario with no collision
+    collwarn("straight", 1)
+    # Scenario "straight", sequences 8 and 21 generate collision warnings (like most other sequences)
+    collwarn("straight", 8)
+    collwarn("straight", 21)
